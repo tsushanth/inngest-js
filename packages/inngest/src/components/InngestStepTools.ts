@@ -50,6 +50,7 @@ import type { Middleware } from "./middleware/index.ts";
 import { NonRetriableError } from "./NonRetriableError.ts";
 import type { Realtime } from "./realtime/types.ts";
 import type { EventType } from "./triggers/triggers.ts";
+import type { DeferredFunction } from "./DeferredFunction.ts";
 
 /**
  * Middleware context for a step, created during step registration.
@@ -174,9 +175,13 @@ export type MatchOpFn<
 ) => Omit<HashedOp, "data" | "error">;
 
 export type StepHandler = (info: {
+  args: [StepOptionsOrId, ...unknown[]];
+  defer?: {
+    fn: DeferredFunction.Any;
+    data: Record<string, unknown>;
+  };
   matchOp: MatchOpFn;
   opts?: StepToolOptions;
-  args: [StepOptionsOrId, ...unknown[]];
 }) => Promise<unknown>;
 
 export interface StepToolOptions<

@@ -28,7 +28,7 @@ const sendEmail = createDefer(
   async ({ event, step }) => {
     event.data.to; // typed from `schema`
     event.data.body;
-  },
+  }
 );
 ```
 
@@ -53,7 +53,7 @@ const orderPlaced = inngest.createFunction(
   { id: "order-placed", triggers: { event: "order/placed" } },
   async ({ defer }) => {
     defer("send", { function: sendEmail, data: { to: "a@b.com", body: "hi" } });
-  },
+  }
 );
 ```
 
