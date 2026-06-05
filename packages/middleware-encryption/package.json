@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "vitest run",
+    "test:integration": "vitest run --config vitest.config.integration.ts",
     "build": "pnpm run build:clean && pnpm run build:tsc && pnpm run build:copy",
     "build:clean": "rm -rf ./dist",
     "build:tsc": "tsc --project tsconfig.build.json",
@@ -49,6 +50,7 @@
   "author": "Inngest Inc. <hello@inngest.com>",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@inngest/test-harness": "workspace:*",
     "@total-typescript/shoehorn": "^0.1.1",
     "@types/crypto-js": "^4.2.1",
     "@types/libsodium-wrappers": "^0.7.14",

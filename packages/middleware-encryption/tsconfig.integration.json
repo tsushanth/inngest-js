@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "inngest": ["../inngest/dist/index.d.ts"],
+      "inngest/*": ["../inngest/dist/*"]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./vitest.setup.integration.ts",
+    "./vitest.config.integration.ts"
+  ]
+}
