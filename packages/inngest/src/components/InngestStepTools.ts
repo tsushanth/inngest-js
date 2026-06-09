@@ -1284,7 +1284,14 @@ type WaitForEventResult<TOpts> =
       StandardSchemaV1<infer TData extends Record<string, unknown>>
     >;
   }
-    ? { name: TName; data: TData; id: string; ts: number; v?: string } | null
+    ? {
+        name: TName;
+        data: TData;
+        id: string;
+        ts: number;
+        v?: string;
+        sessions?: Record<string, string>;
+      } | null
     : // Case 2: event is an EventType without a schema
       TOpts extends {
           event: EventType<infer TName extends string, undefined>;
@@ -1296,6 +1303,7 @@ type WaitForEventResult<TOpts> =
           id: string;
           ts: number;
           v?: string;
+          sessions?: Record<string, string>;
         } | null
       : // Case 3: event is a string with schema (spread EventType)
         TOpts extends {
@@ -1310,6 +1318,7 @@ type WaitForEventResult<TOpts> =
             id: string;
             ts: number;
             v?: string;
+            sessions?: Record<string, string>;
           } | null
         : // Case 4: event is just a string
           TOpts extends { event: infer TName extends string }
@@ -1320,6 +1329,7 @@ type WaitForEventResult<TOpts> =
               id: string;
               ts: number;
               v?: string;
+              sessions?: Record<string, string>;
             } | null
           : EventPayload | null;
 

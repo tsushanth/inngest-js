@@ -236,6 +236,7 @@ describe("eventType without options", () => {
         id: string;
         ts: number;
         v?: string;
+        sessions?: Record<string, string>;
       } | null>();
     });
   });
@@ -351,6 +352,7 @@ describe("eventType with schema", () => {
         id: string;
         ts: number;
         v?: string;
+        sessions?: Record<string, string>;
       } | null>();
     });
   });
