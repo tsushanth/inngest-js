@@ -1,5 +1,11 @@
 # inngest
 
+## 4.5.2
+
+### Patch Changes
+
+- [#1561](https://github.com/inngest/inngest-js/pull/1561) [`ba9874dc`](https://github.com/inngest/inngest-js/commit/ba9874dc4275592922ae5d9b1ea51a4ff60b2000) Thanks [@rhino1998](https://github.com/rhino1998)! - feat(experiments): Rename experiment_name -> experiment in metadata
+
 ## 4.5.1
 
 ### Patch Changes
